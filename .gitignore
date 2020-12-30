@@ -39,7 +39,6 @@
 # Executables
 *.exe
 *.out
-*.app
 
 ### Qt ###
 # C++ objects and libs
