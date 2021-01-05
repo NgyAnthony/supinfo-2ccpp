@@ -15,6 +15,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_actionMove_to_Home_triggered();
+
+    void on_actionMove_to_Table_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

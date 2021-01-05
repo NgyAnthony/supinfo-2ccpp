@@ -23,8 +23,49 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuNavigation">
+    <property name="title">
+     <string>Navigation</string>
+    </property>
+    <addaction name="actionMove_to_Home"/>
+    <addaction name="actionMove_to_Table"/>
+   </widget>
+   <addaction name="menuNavigation"/>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionMove_to_Home"/>
+   <addaction name="actionMove_to_Table"/>
+  </widget>
+  <action name="actionMove_to_Home">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/imgs/home.png</normaloff>:/imgs/home.png</iconset>
+   </property>
+   <property name="text">
+    <string>Move to Home</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Table">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/imgs/table.png</normaloff>:/imgs/table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Move to Table</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
