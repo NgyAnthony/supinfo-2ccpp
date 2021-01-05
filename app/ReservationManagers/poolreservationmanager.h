@@ -2,7 +2,8 @@
 #define POOLRESERVATIONMANAGER_H
 
 #include "Reservations/poolreservation.h"
-#include "ReservationManagers/basereservationmanager.h"
+#include <QList>
+#include <QDateTime>
 
 class PoolReservationManager
 {
