@@ -6,66 +6,110 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1080</width>
     <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1080</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuNavigation">
-    <property name="title">
-     <string>Navigation</string>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="menuFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>71</width>
+      <height>601</height>
+     </rect>
     </property>
-    <addaction name="actionMove_to_Home"/>
-    <addaction name="actionMove_to_Table"/>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+font-weight: bold;
+color: #99a9b3;
+border-style: solid;
+border-radius:21px;
+max-height:100%;
+}
+
+QFrame{
+background:#48545e;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>71</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="menuLayout">
+      <item>
+       <widget class="QPushButton" name="homeButton">
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="tableButton">
+        <property name="text">
+         <string>Table</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <addaction name="menuNavigation"/>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>991</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="Home" name="homeWidget"/>
+    <widget class="Table" name="tableWidget"/>
+   </widget>
   </widget>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionMove_to_Home"/>
-   <addaction name="actionMove_to_Table"/>
-  </widget>
-  <action name="actionMove_to_Home">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/imgs/home.png</normaloff>:/imgs/home.png</iconset>
-   </property>
-   <property name="text">
-    <string>Move to Home</string>
-   </property>
-  </action>
-  <action name="actionMove_to_Table">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/imgs/table.png</normaloff>:/imgs/table.png</iconset>
-   </property>
-   <property name="text">
-    <string>Move to Table</string>
-   </property>
-  </action>
  </widget>
- <resources>
-  <include location="Resources.qrc"/>
- </resources>
+ <customwidgets>
+  <customwidget>
+   <class>Table</class>
+   <extends>QWidget</extends>
+   <header>table.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Home</class>
+   <extends>QWidget</extends>
+   <header>home.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
  <connections/>
 </ui>

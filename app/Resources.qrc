@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>home.png</file>
+        <file>table.png</file>
+        <file>supinfo-logo.png</file>
+    </qresource>
+</RCC>
