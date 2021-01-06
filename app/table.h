@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QtSql>
 #include <QTableView>
+#include <QStackedWidget>
+#include "GeneralManagers/customermanager.h"
 
 namespace Ui {
 class Table;
@@ -18,14 +20,15 @@ public:
     ~Table();
 
 private slots:
-    void on_refreshButton_clicked();
+    void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::Table *ui;
-    void createRelationalTables();
-    void initializeModel(QSqlRelationalTableModel *model);
     QTableView *table;
-    QSqlRelationalTableModel model;
+    QStackedWidget *stackedWidget;
+    QWidget *customersWidget;
+    QWidget *poolreservationWidget;
+    CustomerManager customermanager;
 };
 
 #endif // TABLE_H

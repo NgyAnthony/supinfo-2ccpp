@@ -12,6 +12,7 @@ SOURCES += \
     Entities/address.cpp \
     Entities/customer.cpp \
     Entities/pool.cpp \
+    GeneralManagers/addressmanager.cpp \
     GeneralManagers/customermanager.cpp \
     ReservationManagers/poolreservationmanager.cpp \
     Reservations/basereservation.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     Entities/address.h \
     Entities/customer.h \
     Entities/pool.h \
+    GeneralManagers/addressmanager.h \
     GeneralManagers/customermanager.h \
     ReservationManagers/poolreservationmanager.h \
     Reservations/basereservation.h \
