@@ -31,11 +31,7 @@ static bool createConnection()
     }
 
     QSqlQuery query;
-    if (db.open()){
 
-        QMessageBox::critical(nullptr, QObject::tr("SUCCESS database"),
-            QObject::tr("SUCCCESSSS to establish a database connection.\n"), QMessageBox::Cancel);
-    }
     return true;
 }
 //! [0]

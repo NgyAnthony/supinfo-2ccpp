@@ -17,11 +17,15 @@ public:
     explicit Table(QWidget *parent = nullptr);
     ~Table();
 
+private slots:
+    void on_refreshButton_clicked();
+
 private:
     Ui::Table *ui;
     void createRelationalTables();
     void initializeModel(QSqlRelationalTableModel *model);
-    std::unique_ptr<QTableView> createView(const QString &title, QSqlTableModel *model);
+    QTableView *table;
+    QSqlRelationalTableModel model;
 };
 
 #endif // TABLE_H
