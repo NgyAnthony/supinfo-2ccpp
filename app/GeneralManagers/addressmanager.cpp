@@ -5,11 +5,28 @@ AddressManager::AddressManager()
     initializeAddressModel(model);
 }
 
+Address AddressManager::FetchAddressWithIndex(int index){
+    QSqlQuery query;
+
+
+    bool prepRet = query.exec("SELECT * FROM address WHERE id = " + QString::number(index));
+
+    if (!prepRet) {
+         qDebug() << query.lastError().text();
+    }
+
+    if (!query.exec()) {
+         qDebug() << query.lastError().text();
+    }
+
+    query.first();
+    Address* fetchedAddress = new Address(query.value(1).toString(), query.value(2).toString(), query.value(3).toString(), query.value(4).toString());
+    return *fetchedAddress;
+}
 
 void AddressManager::CreateAddress(Address &address){
     if (AddressIsValid(address)){
         QSqlRecord record;
-        QSqlQuery query;
 
         QSqlField field1("country", QMetaType::fromType<QString>());
         QSqlField field2("postalcode", QMetaType::fromType<QString>());
@@ -69,7 +86,6 @@ void AddressManager::initializeAddressModel(QSqlRelationalTableModel *model)
 bool AddressManager::AddressIsValid(Address &address){
     return true;
 }
-
 
 void AddressManager::Refresh(){
     model->select();

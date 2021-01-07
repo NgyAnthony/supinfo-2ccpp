@@ -17,6 +17,8 @@ private:
 public:
     AddressManager();
 
+    Address FetchAddressWithIndex(int index);
+
     void initializeAddressModel(QSqlRelationalTableModel *model);
 
     void CreateAddress(Address &address);
