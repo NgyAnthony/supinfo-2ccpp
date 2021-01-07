@@ -25,6 +25,10 @@ public:
 
     bool AddressIsValid(Address &address);
 
+    void Refresh();
+
+    void SubmitChanges();
+
     QSqlRelationalTableModel* getAddressModel(){
         return model;
     };

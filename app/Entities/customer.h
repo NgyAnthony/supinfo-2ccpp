@@ -12,6 +12,10 @@ public:
     QString lastName;
     QString phoneNumber;
     Address address;
+
+    void setAddress(Address ad){
+        address = ad;
+    }
 };
 
 #endif // CUSTOMER_H

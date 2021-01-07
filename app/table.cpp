@@ -35,7 +35,7 @@ void Table::TriggerCreateCustomer(){
     QString snumber = ui -> streetNumberText -> text();
     Address* customerAddress = new Address(cn, pc, sname, snumber);
     Customer* currentCustomer = new Customer(fn, ln, pn, *customerAddress);
-    customermanager.CreateCustomer(*currentCustomer);
+    customermanager.CreateCustomerWithQuery(*currentCustomer);
 }
 
 // Figure out which Table is selected and fetch it
@@ -45,11 +45,13 @@ void Table::on_comboBox_currentIndexChanged(int index)
     {
 
     case 0:
+        customermanager.Refresh();
         table->setModel(customermanager.getCustomerModel());
         stackedWidget->setCurrentWidget(customersWidget);
         break;
 
     case 1:
+        addressmanager.Refresh();
         table->setModel(addressmanager.getAddressModel());
         stackedWidget->setCurrentWidget(addressWidget);
         break;
@@ -76,6 +78,29 @@ void Table::on_addButton_clicked()
         break;
 
     case 1:
+        break;
+
+    case 2:
+        break;
+
+    default:
+        break;
+    }
+}
+
+
+void Table::on_pushButton_clicked()
+{
+    int clicked = ui->comboBox->currentIndex();
+    switch (clicked)
+    {
+
+    case 0:
+        customermanager.SubmitChanges();
+        break;
+
+    case 1:
+        addressmanager.SubmitChanges();
         break;
 
     case 2:

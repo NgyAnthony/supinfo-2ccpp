@@ -27,7 +27,7 @@ void AddressManager::CreateAddress(Address &address){
         record.append(field4);
 
         model->insertRecord(-1, record);
-        model->submit();
+        model->submitAll();
         model->select();
     }
 }
@@ -42,7 +42,7 @@ int AddressManager::CreateAddressWithQuery(Address &address){
         query.bindValue(":streetnumber", address.streetNumber);
 
         query.exec();
-        qDebug() << query.lastInsertId().toInt();
+        model->select();
         return query.lastInsertId().toInt();
 }
 
@@ -68,4 +68,14 @@ void AddressManager::initializeAddressModel(QSqlRelationalTableModel *model)
 
 bool AddressManager::AddressIsValid(Address &address){
     return true;
+}
+
+
+void AddressManager::Refresh(){
+    model->select();
+}
+
+void AddressManager::SubmitChanges(){
+    model->submitAll();
+    model->select();
 }

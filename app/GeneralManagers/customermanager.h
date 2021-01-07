@@ -19,14 +19,16 @@ public:
     void initializeCustomerModel(QSqlRelationalTableModel *model);
 
     void CreateCustomer(Customer &customer);
+    int CreateCustomerWithQuery(Customer &customer);
 
     void ModifyCustomer(Customer &oldCustomer, Customer &newCustomer);
 
     void RemoveCustomer(Customer &customer);
-
+    void Refresh();
     QList<Customer> ViewCustomer(QDateTime &startDatetime, QDateTime &endDatetime);
 
     bool CustomerIsValid(Customer &customer);
+    void SubmitChanges();
 
     QSqlRelationalTableModel* getCustomerModel(){
         return model;

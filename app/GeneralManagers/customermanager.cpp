@@ -33,29 +33,31 @@ void CustomerManager::initializeCustomerModel(QSqlRelationalTableModel *model)
         model->select();
 }
 
-void CustomerManager::CreateCustomer(Customer &customer){
-    if (CustomerIsValid(customer)){
-        QSqlRecord record;
+int CustomerManager::CreateCustomerWithQuery(Customer &customer){
         QSqlQuery query;
-        QSqlField field1("firstname", QMetaType::fromType<QString>());
-        QSqlField field2("lastname", QMetaType::fromType<QString>());
-        QSqlField field3("phonenumber", QMetaType::fromType<QString>());
-        QSqlField field4("addressID", QMetaType::fromType<int>());
-        addressmanager.CreateAddressWithQuery(customer.address);
-        field1.setValue(customer.firstName);
-        field2.setValue(customer.lastName);
-        field3.setValue(customer.phoneNumber);
-        field4.setValue(7);
+        query.prepare("INSERT INTO customer (firstname, lastname, phonenumber, addressID) "
+                   "VALUES (:firstname, :lastname, :phonenumber, :addressID)");
 
-        record.append(field1);
-        record.append(field2);
-        record.append(field3);
-        record.append(field4);
+        query.bindValue(":firstname", customer.firstName);
+        query.bindValue(":lastname", customer.lastName);
+        query.bindValue(":phonenumber", customer.phoneNumber);
 
-        model->insertRecord(-1, record);
-        model->submitAll();
+        int addressFk = addressmanager.CreateAddressWithQuery(customer.address);
+        query.bindValue(":addressID", addressFk);
+
+        query.exec();
         model->select();
-    }
+        return query.lastInsertId().toInt();
+}
+
+
+void CustomerManager::Refresh(){
+    model->select();
+}
+
+void CustomerManager::SubmitChanges(){
+    model->submitAll();
+    model->select();
 }
 
 void CustomerManager::ModifyCustomer(Customer &oldCustomer, Customer &newCustomer){
