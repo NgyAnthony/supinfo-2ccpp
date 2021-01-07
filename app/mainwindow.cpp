@@ -15,15 +15,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_actionMove_to_Home_triggered()
+void MainWindow::on_homeButton_clicked()
 {
-    Home *home = new Home();
-    setCentralWidget(home);
+    ui->stackedWidget->setCurrentWidget(ui->homeWidget);
 }
 
-void MainWindow::on_actionMove_to_Table_triggered()
+void MainWindow::on_tableButton_clicked()
 {
-    Table *table = new Table();
-    setCentralWidget(table);
+    ui->stackedWidget->setCurrentWidget(ui->tableWidget);
 }

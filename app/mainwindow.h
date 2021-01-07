@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "home.h"
+#include "table.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,9 +18,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionMove_to_Home_triggered();
+    void on_homeButton_clicked();
 
-    void on_actionMove_to_Table_triggered();
+    void on_tableButton_clicked();
 
 private:
     Ui::MainWindow *ui;

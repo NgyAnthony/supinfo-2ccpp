@@ -7,11 +7,11 @@
 class Customer
 {
 public:
-    Customer(QString firstName, QString lastName, QString phoneNumber, Address& address);
+    Customer(QString firstName, QString lastName, QString phoneNumber, Address address);
     QString firstName;
     QString lastName;
     QString phoneNumber;
-    Address& address;
+    Address address;
 };
 
 #endif // CUSTOMER_H
