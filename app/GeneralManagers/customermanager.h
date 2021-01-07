@@ -1,8 +1,9 @@
 #ifndef CUSTOMERMANAGER_H
 #define CUSTOMERMANAGER_H
 #include "Entities/customer.h"
-#include <QDateTime>
+#include "addressmanager.h"
 
+#include <QDateTime>
 #include <QtSql>
 #include <memory>
 
@@ -10,11 +11,10 @@ class CustomerManager
 {
 private:
     QSqlRelationalTableModel *model = new QSqlRelationalTableModel;
+    AddressManager addressmanager;
 
 public:
     CustomerManager();
-
-    void initializeCustomerTable();
 
     void initializeCustomerModel(QSqlRelationalTableModel *model);
 

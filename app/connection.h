@@ -32,6 +32,17 @@ static bool createConnection()
 
     QSqlQuery query;
 
+
+    query.exec("create table address(id INTEGER PRIMARY KEY AUTOINCREMENT, country varchar(20), postalcode varchar(20), streetname varchar(20), streetnumber varchar(20))");
+    query.exec("insert into address values(1, 'Allemagne', '11150', 'Rue allemagne', '1')");
+    query.exec("insert into address values(2, 'France', '44150', 'Rue france', '7')");
+    query.exec("insert into address values(3, 'Italy', '33000', 'Rue italie', '12bis')");
+
+    query.exec("create table customer(id INTEGER PRIMARY KEY AUTOINCREMENT, firstname varchar(20), lastname varchar(20), phonenumber varchar(20), addressID int, FOREIGN KEY (addressID) REFERENCES address(id))");
+    query.exec("insert into customer values(1, 'Espen', 'LastName1', '+331222345', 1)");
+    query.exec("insert into customer values(2, 'Harald', 'LastName2', '+33433321', 2)");
+    query.exec("insert into customer values(3, 'Sam', 'LastName3', '+339090909', 3)");
+
     return true;
 }
 //! [0]

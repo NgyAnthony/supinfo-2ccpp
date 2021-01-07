@@ -29,6 +29,11 @@
    </item>
    <item>
     <property name="text">
+     <string>Addresses</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>Pool reservations</string>
     </property>
    </item>
@@ -66,7 +71,7 @@
     </rect>
    </property>
    <widget class="QWidget" name="customers">
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="firstnameText">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -79,7 +84,7 @@
       <string>First Name</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="lastnameText">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -92,7 +97,7 @@
       <string>Last Name</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="phonenumberText">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -105,11 +110,11 @@
       <string>Phone Number</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="countryText">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>120</y>
+       <y>200</y>
        <width>261</width>
        <height>21</height>
       </rect>
@@ -121,17 +126,139 @@
       <string>Country</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="streetnameText">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>150</y>
+       <y>260</y>
        <width>261</width>
        <height>71</height>
       </rect>
      </property>
      <property name="placeholderText">
+      <string>Street Name</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="postalcodeText">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>230</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Postal Code</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="streetNumberText">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>230</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Street Number</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>180</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
       <string>Address</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Identity</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="addresses">
+    <widget class="QLineEdit" name="postalcodeText_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Postal Code</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="streetNumberText_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>50</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Street Number</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Address</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="countryText_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Country</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="streetnameText_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>261</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Street Name</string>
      </property>
     </widget>
    </widget>
